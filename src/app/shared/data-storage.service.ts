@@ -17,14 +17,15 @@ export class DataStorageService {
     }
 
     fetchRecipes() {
-      this.http.get<Recipe[]>('https://my-first-angular-df16e-default-rtdb.europe-west1.firebasedatabase.app/recipes.json')
+      return this.http.get<Recipe[]>('https://my-first-angular-df16e-default-rtdb.europe-west1.firebasedatabase.app/recipes.json')
         .pipe(map(recipes => {
           return recipes.map(recipe => {
             return {...recipe, ingredient: recipe.ingredients ? recipe.ingredients : []}
           })
-        }))
-        .subscribe( recipes => {
-          this.recipeService.setRecipes(recipes)
-        })
+        }),
+          tap( recipes => {
+            this.recipeService.setRecipes(recipes)
+          })
+        )
     }
 }

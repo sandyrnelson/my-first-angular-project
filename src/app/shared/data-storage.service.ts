@@ -14,4 +14,11 @@ export class DataStorageService {
           console.log(response);
       })
     }
+
+    fetchRecipes() {
+      this.http.get<Recipe[]>('https://my-first-angular-df16e-default-rtdb.europe-west1.firebasedatabase.app/recipes.json')
+        .subscribe( recipes => {
+          this.recipeService.setRecipes(recipes)
+        })
+    }
 }

@@ -36,5 +36,13 @@ describe('RecipeService', () =>{
     });
   });
 
+  it('getRecipe should return recipe from index selected', () => {
+    recipeService.recipes = RECIPES;
+
+    let result = recipeService.getRecipe(0);
+
+    expect(result.name).toContain('0');
+  });
+
 
 })

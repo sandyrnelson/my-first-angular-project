@@ -10,15 +10,6 @@ describe('RecipeService', () =>{
   let mockShoppingListService;
   let RECIPES;
 
-  @Component({
-    selector: 'app-recipe-list',
-    template: '<div></div>',
-  })
-  class FakeRecipeList {
-    recipesList: Recipe[];
-    subscription: Subscription;
-  }
-
   beforeEach(() => {
     RECIPES = [
       new Recipe('Recipe 0', 'Description 1', '', [new Ingredient('Ingredient1', 1)]),
@@ -29,5 +20,6 @@ describe('RecipeService', () =>{
     recipeService = new RecipeService(mockShoppingListService);
 
   });
+
 
 })

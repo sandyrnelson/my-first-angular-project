@@ -84,4 +84,13 @@ describe('RecipeService', () =>{
     expect(recipeService.recipes[index].name).toContain('New');
   });
 
+  it('deleteRecipe should remove the recipe located at selected index', () => {
+    let index = 0;
+    recipeService.recipes = RECIPES;
+
+    recipeService.deleteRecipe(index);
+
+    expect(recipeService.recipes.length).toBe(2);
+  });
+
 })

@@ -55,4 +55,13 @@ describe('RecipeService', () =>{
     expect(recipeService.recipes[0].name).toContain('New');
   });
 
+  it('addIngrToShoppingList should call addIngredients on shoppingListService', () => {
+    mockShoppingListService.addIngredients.and.returnValue(of(true));
+    let ingredients = [new Ingredient('ingredient', 1)];
+
+    recipeService.addIngrToShoppingList(ingredients);
+
+    expect(mockShoppingListService.addIngredients).toHaveBeenCalledWith(ingredients);
+  });
+
 })

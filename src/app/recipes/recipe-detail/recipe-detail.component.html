@@ -9,26 +9,24 @@
 </div>
 <div class="row">
   <div class="primary-text col-xs-12">
-    <h1>{{ recipe.name }}</h1>
+    <h1>{{ recipe.name }}
+    <span class="pull-right">
+      <span class="btn-group"
+           appDropdown>
+        <button
+          type="button"
+          class="btn btn-primary dropdown-toggle">
+          Manage Recipe <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a (click)="onAddToShoppingList()" style="cursor:pointer">Add to Shopping</a></li>
+          <li><a style="cursor:pointer" (click)="onEditRecipe()">Edit recipe</a></li>
+          <li><a style="cursor:pointer" (click)="onDeleteRecipe()">Delete recipe</a></li>
+        </ul>
+      </span>
+    </span>
+    </h1>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group"
-          appDropdown>
-      <button
-        type="button"
-        class="btn btn-primary dropdown-toggle">
-        Manage Recipe <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a (click)="onAddToShoppingList()" style="cursor:pointer">Add to Shopping</a></li>
-        <li><a style="cursor:pointer" (click)="onEditRecipe()">Edit recipe</a></li>
-        <li><a style="cursor:pointer" (click)="onDeleteRecipe()">Delete recipe</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
 <div class="row">
   <div class="secondary-text col-xs-12">
     {{ recipe.description }}

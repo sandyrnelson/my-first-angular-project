@@ -44,5 +44,15 @@ describe('RecipeService', () =>{
     expect(result.name).toContain('0');
   });
 
+  it('setRecipes should update the recipes list to match provided', () => {
+    let newRecipes = [
+      new Recipe('New Recipe', 'New Description', '', [new Ingredient('New Ing', 1)] )
+    ]
+
+    recipeService.setRecipes(newRecipes)
+
+    expect(recipeService.recipes.length).toBe(1);
+    expect(recipeService.recipes[0].name).toContain('New');
+  });
 
 })

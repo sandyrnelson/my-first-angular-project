@@ -8,7 +8,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
+  <div class="primary-text col-xs-12">
     <h1>{{ recipe.name }}</h1>
   </div>
 </div>
@@ -30,14 +30,14 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
+  <div class="secondary-text col-xs-12">
     {{ recipe.description }}
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
     <ul class="list-group">
-      <li class="list-group-item"
+      <li class="tertiary-text list-group-item"
       *ngFor="let ingredient of recipe.ingredients">
         {{ ingredient.name }} - {{ ingredient.amount }}
       </li>

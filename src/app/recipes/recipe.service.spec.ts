@@ -64,4 +64,24 @@ describe('RecipeService', () =>{
     expect(mockShoppingListService.addIngredients).toHaveBeenCalledWith(ingredients);
   });
 
+  it('addRecipe should add the new recipe to recipes list', () => {
+    let newRecipe = new Recipe('New Recipe', 'New Description', '', []);
+
+    recipeService.addRecipe(newRecipe);
+
+    expect(recipeService.recipes.length).toBe(1);
+    expect(recipeService.recipes[0].name).toContain('New');
+  });
+
+  it('updateRecipe should update the recipe at selected index', () => {
+    let index = 0;
+    recipeService.recipes = RECIPES;
+    let newRecipe = new Recipe('New Recipe', 'New Description', '', []);
+
+    recipeService.updateRecipe(index, newRecipe);
+
+    expect(recipeService.recipes.length).toBe(3);
+    expect(recipeService.recipes[index].name).toContain('New');
+  });
+
 })

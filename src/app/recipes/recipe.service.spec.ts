@@ -20,6 +20,21 @@ describe('RecipeService', () =>{
     recipeService = new RecipeService(mockShoppingListService);
 
   });
+  describe('getRecipes', () =>{
+    it('should return an empty list if no recipes are provided', () =>{
+      let result = recipeService.getRecipes();
+
+      expect(result.length).toBe(0)
+    });
+
+    it('should return the list provided', () =>{
+      recipeService.recipes = RECIPES;
+
+      let result = recipeService.getRecipes();
+
+      expect(result.length).toBe(3)
+    });
+  });
 
 
 })

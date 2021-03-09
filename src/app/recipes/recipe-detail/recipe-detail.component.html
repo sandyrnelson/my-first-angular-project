@@ -1,44 +1,46 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img
-      [src]="recipe.imagePath"
-      alt="{{ recipe.name }}"
-      class="img-responsive"
-      style="max-height: 300px">
+<div class="margin">
+  <div class="row">
+    <div class="primary-text col-xs-12">
+      <h1 class="header">
+        <span class="title">{{ recipe.name }}</span>
+        <span class="manage">
+          <span class="btn-group"
+               appDropdown>
+            <button
+              type="button"
+              class="btn dropdown-toggle"> . . . </button>
+            <ul class="dropdown-menu">
+              <li><a (click)="onAddToShoppingList()" style="cursor:pointer">Add to Shopping</a></li>
+              <li><a style="cursor:pointer" (click)="onEditRecipe()">Edit recipe</a></li>
+              <li><a style="cursor:pointer" (click)="onDeleteRecipe()">Delete recipe</a></li>
+            </ul>
+          </span>
+        </span>
+      </h1>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="primary-text col-xs-12">
-    <h1>{{ recipe.name }}
-    <span class="pull-right">
-      <span class="btn-group"
-           appDropdown>
-        <button
-          type="button"
-          class="btn btn-primary dropdown-toggle">
-          Manage Recipe <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a (click)="onAddToShoppingList()" style="cursor:pointer">Add to Shopping</a></li>
-          <li><a style="cursor:pointer" (click)="onEditRecipe()">Edit recipe</a></li>
-          <li><a style="cursor:pointer" (click)="onDeleteRecipe()">Delete recipe</a></li>
-        </ul>
-      </span>
-    </span>
-    </h1>
+  <div class="row">
+    <div class="col-xs-12">
+      <img
+        [src]="recipe.imagePath"
+        alt="{{ recipe.name }}"
+        class="img-responsive"
+        style="max-height: 300px">
+    </div>
   </div>
-<div class="row">
-  <div class="secondary-text col-xs-12">
-    {{ recipe.description }}
+  <div class="row">
+    <div class="secondary-text description col-xs-12">
+      {{ recipe.description }}
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <ul class="list-group">
-      <li class="tertiary-text list-group-item"
-      *ngFor="let ingredient of recipe.ingredients">
-        {{ ingredient.name }} - {{ ingredient.amount }}
-      </li>
-    </ul>
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="tertiary-text list-group-item"
+        *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient.name }} - {{ ingredient.amount }}
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

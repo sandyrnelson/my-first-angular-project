@@ -29,4 +29,17 @@ button:hover {
 .tertiary-text {
   font-family: 'Playfair Display';
   font-size: 14px;
+  background-color: #eeefe8;
+}
+
+.header {
+  display: flex;
+}
+
+.title {
+  flex-grow: 2;
+}
+
+.manage {
+  flex-grow: 1;
 }

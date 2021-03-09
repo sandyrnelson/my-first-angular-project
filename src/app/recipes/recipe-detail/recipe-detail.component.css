@@ -23,6 +23,7 @@ button:hover {
 
 .secondary-text {
   font-family: 'Playfair Display';
+  font-style: italic;
   font-size: 16px;
 }
 

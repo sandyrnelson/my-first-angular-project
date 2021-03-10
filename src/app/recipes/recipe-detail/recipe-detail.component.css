@@ -1,0 +1,51 @@
+.margin {
+  margin: 5px 15px 5px 15px;
+}
+
+button {
+  margin: 5px 5px 5px 0;
+  background-color: transparent;
+  color: #4a4949;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 40%;
+}
+
+button:hover {
+  background-color: #b0b1a3;
+  color: #cfd4c9;
+}
+
+.primary-text {
+  font-family: 'Mulish';
+  font-size: 28px;
+}
+
+.secondary-text {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-size: 16px;
+}
+
+.tertiary-text {
+  font-family: 'Playfair Display';
+  font-size: 14px;
+  background-color: #eeefe8;
+}
+
+.header {
+  display: flex;
+}
+
+.title {
+  flex-grow: 2;
+}
+
+.manage {
+  flex-grow: 1;
+}
+
+.description {
+  margin: 20px 0 20px 0;
+}
+

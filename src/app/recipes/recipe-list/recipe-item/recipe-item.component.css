@@ -1,0 +1,19 @@
+.recipe-link {
+  margin: 15px 0 15px 0;
+}
+
+.recipe-link:hover {
+  background-color: darkseagreen;
+}
+
+.active-link {
+  background-color: darkseagreen;
+}
+
+.primary-text {
+  font-family: 'Mulish';
+}
+
+.secondary-text {
+  font-family: 'Playfair Display';
+}

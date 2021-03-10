@@ -8,25 +8,7 @@ import {Subject} from 'rxjs';
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe('Hamburger',
-      'This is simply a test',
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=960,872',
-      [
-        new Ingredient('Meat', 1),
-        new Ingredient('Lettuce', 2),
-        new Ingredient('Tomatoes', 3),
-        new Ingredient('Buns', 2),
-      ]),
-    new Recipe('Salad',
-      'This is simply a test',
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=960,872',
-      [
-        new Ingredient('Chicken', 1),
-        new Ingredient('Lettuce', 2),
-        new Ingredient('1000 island', 3),
-      ]),
-  ];
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService) { }
 
@@ -36,6 +18,11 @@ export class RecipeService {
 
   getRecipe(id: number) {
     return this.recipes[id];
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice())
   }
 
   addIngrToShoppingList(ingredients: Ingredient[]){

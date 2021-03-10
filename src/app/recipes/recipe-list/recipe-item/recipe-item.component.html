@@ -1,11 +1,11 @@
 <a
   style="cursor: pointer"
   [routerLink]="[index]"
-  routerLinkActive="active"
-  class="list-group-item clearfix">
+  routerLinkActive="active-link"
+  class="recipe-link list-group-item clearfix">
   <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-    <p class="list-group-item-text">{{ recipe.description }}</p>
+    <h4 class="primary-text list-group-item-heading">{{ recipe.name }}</h4>
+    <p class="secondary-text list-group-item-text">{{ recipe.description | shorten:40 }}</p>
   </div>
   <span class="pull-right">
         <img
